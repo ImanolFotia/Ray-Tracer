@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Ray tracer" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Ray tracer" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Debug" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Compiler>
+					<Add option="-march=atom" />
+					<Add option="-O3" />
+					<Add option="-std=c++14" />
+					<Add option="-std=c++11" />
+					<Add option="-fopenmp" />
+					<Add option="-lgomp" />
+					<Add directory="include" />
+					<Add directory="../../../common-libs/glm-0.9.8.4" />
+					<Add directory="../../../common-libs/stb-master" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add option="-fopenmp" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-fopenmp" />
+					<Add option="-lgdi32" />
+					<Add library="../../../common-libs/glew/lib/libglew32.a" />
+					<Add library="../../../common-libs/glfw-3.1.1/build/src/glfw3dll.a" />
+					<Add library="opengl32" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Ray tracer" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="include/TriangleMesh.hpp" />
+		<Unit filename="include/color.h" />
+		<Unit filename="include/emlFormat.h" />
+		<Unit filename="include/helpers.hpp" />
+		<Unit filename="include/ray.h" />
+		<Unit filename="include/sphere.h" />
+		<Unit filename="include/vec3.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
